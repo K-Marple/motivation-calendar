@@ -4,7 +4,7 @@ First attempt at creating a "major" program using Java. I wanted to create somet
 
 This is a calendar that will keep track of tasks, title and time, that are entered in. Originally it was meant to allow tasks to be marked complete and give rewards when they are done but I haven't gotten that far yet...
 
-[Software Demo Video]()
+[Software Demo Video](https://cdnapisec.kaltura.com/index.php/extwidget/preview/partner_id/1157612/uiconf_id/42438192/entry_id/1_6s4ddooy/embed/dynamic)
 
 # Development Environment
 
