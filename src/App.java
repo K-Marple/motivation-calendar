@@ -1,12 +1,12 @@
 import javax.swing.SwingUtilities;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class App {
     public static void main(String[] args) {
+        // Bring in files and GUI
         TaskManager manager = new TaskManager();
         SwingUtilities.invokeLater(() -> new CalendarGUI(manager));
 
+        // OLD CODE FOR CALENDAR WITHOUT GUI //
         // Scanner scanner = new Scanner(System.in);
         // TaskManager manager = new TaskManager();
 

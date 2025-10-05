@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class TaskManager {
+    // Keep track of tasks
     private Map<LocalDate, List<Task>> taskMap = new HashMap<>();
 
     public void addTask(Task task) {

@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Task {
+    // Build task information to store
     private String title;
     private LocalDate date;
     private LocalTime time;

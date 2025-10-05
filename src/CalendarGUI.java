@@ -4,15 +4,17 @@ import java.time.*;
 import java.util.List;
 
 public class CalendarGUI extends JFrame {
+    //
     private TaskManager manager;
     private YearMonth currentMonth;
 
+    // Create calendar "popup" window
     public CalendarGUI(TaskManager manager) {
         this.manager = manager;
         this.currentMonth = YearMonth.now();
 
         setTitle("Task Scheduler Calendar");
-        setSize(600, 400);
+        setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -20,6 +22,7 @@ public class CalendarGUI extends JFrame {
         setVisible(true);
     }
 
+    // Populate information for calendar
     private void drawCalendar() {
         JPanel calendarPanel = new JPanel(new GridLayout(0, 7));
         JLabel header = new JLabel(currentMonth.getMonth() + " " + currentMonth.getYear(), JLabel.CENTER);
@@ -30,12 +33,14 @@ public class CalendarGUI extends JFrame {
             calendarPanel.add(new JLabel(day, JLabel.CENTER));
         }
 
+        // Ensure start of month is on correct day
         LocalDate firstDay = currentMonth.atDay(1);
         int startOffset = firstDay.getDayOfWeek().getValue() % 7;
         for (int i = 0; i < startOffset; i++) {
             calendarPanel.add(new JLabel(""));
         }
 
+        // Highlight today and days with tasks
         LocalDate today = LocalDate.now();
         int daysInMonth = currentMonth.lengthOfMonth();
         for (int day = 1; day <= daysInMonth; day++) {
@@ -61,6 +66,7 @@ public class CalendarGUI extends JFrame {
         add(calendarPanel, BorderLayout.CENTER);
     }
 
+    // Add task "popup"
     private void openTaskDialog(LocalDate date) {
         JTextField titleField = new JTextField();
         JTextField timeField = new JTextField();
@@ -89,6 +95,7 @@ public class CalendarGUI extends JFrame {
             }
         }
 
+        // OLD CODE FOR DISPLAYING TASKS OF GIVEN DATE //
         // List<Task> tasks = manager.getTasks(date);
         // StringBuilder message = new StringBuilder("Tasks for " + date + ":\n");
         // for (Task task : tasks) {
@@ -97,6 +104,7 @@ public class CalendarGUI extends JFrame {
         // JOptionPane.showMessageDialog(this, message.toString());
     }
 
+    // Refresh calendar after adding task
     private void refreshCalendar() {
         getContentPane().removeAll();
         drawCalendar();

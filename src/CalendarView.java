@@ -2,7 +2,10 @@ import java.time.YearMonth;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
+// OBSOLETE WITH USE OF GUI. OLD CODE FOR BUILDING CALENDAR FOR TERMINAL OUTPUT //
+
 public class CalendarView {
+    // Build calendar layout
     public static void printMonth(int year, int month) {
         YearMonth ym = YearMonth.of(year, month);
         LocalDate firstDay = ym.atDay(1);
